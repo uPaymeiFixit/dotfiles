@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../libs.sh
+source "../libs.sh"
 
 echo "###############################################################################"
 echo "# General UI/UX"
@@ -53,10 +53,6 @@ killall mds > /dev/null 2>&1
 sudo mdutil -i on / > /dev/null
 # Rebuild the index from scratch
 sudo mdutil -E / > /dev/null
-
-echo ""
-echo "Enable the sound effect on boot"
-sudo nvram BootAudio=%01
 
 echo ""
 echo "Enable feedback sound when volume is changed"

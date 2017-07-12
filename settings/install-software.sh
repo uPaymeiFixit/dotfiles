@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../libs.sh
+source "../libs.sh"
 
 echo "###############################################################################"
 echo "# Homebrew / Casks / Gems / Node Modules"
@@ -20,12 +20,15 @@ brew install coreutils > /dev/null
 echo ""
 echo "Install some utilities (this could take a while)"
 brew install git > /dev/null
+brew install git-flow > /dev/null
 brew install hub > /dev/null
 brew install wget > /dev/null
 brew install nmap > /dev/null
 brew install imagemagick --with-webp > /dev/null
 brew install libyaml > /dev/null
 brew install cmake > /dev/null
+brew install less > /dev/null
+brew install most > /dev/null
 
 echo ""
 printf "Install Node.JS ${green}⬢${reset}\n"
@@ -33,6 +36,10 @@ brew install node > /dev/null
 sudo npm install -g n
 sudo n latest > /dev/null
 sudo n lts > /dev/null
+
+echo ""
+echo "Install Yarn 🐈"
+brew install yarn > /dev/null
 
 echo ""
 echo "Install Foreman"
@@ -83,6 +90,7 @@ chmod +x install-fish
 ./install-fish -y --noninteractive
 fish -c "omf install osx"
 fish -c "omf install node-binpath"
+fish -c "omf install https://github.com/dudeofawesome/omf-plugin-yarn"
 fish -c "omf install agnoster"
 cd ~
 
@@ -100,18 +108,19 @@ echo "Installing MAS (Mac App Store CLI)"
 brew install mas > /dev/null
 
 echo ""
-echo "Install Yarn 🐈"
-brew install yarn > /dev/null
-
-echo ""
 echo "Installing Xcode (via mas CLI, you may need to sign in)"
 tput bel
 mas install 497799835
 
 echo ""
-echo "Installing Server (via mas CLI, you may need to sign in) "
+echo "Installing Server (via mas CLI, you may need to sign in) 🌎"
 tput bel
 mas install 883878097
+
+echo ""
+echo "Installing Boxy (via mas CLI, you may need to sign in) 📬"
+tput bel
+mas install 1053031090
 
 echo ""
 echo "Installing Vim"
@@ -126,7 +135,7 @@ make
 popd
 
 echo ""
-echo "Installing Postgres"
+echo "Installing Postgres 🐘"
 brew install postgres > /dev/null
 
 echo ""
@@ -138,7 +147,7 @@ echo "Installing Gifsicle"
 brew install gifsicle > /dev/null
 
 echo ""
-echo "Installing Homebrew Cask"
+echo "Installing Homebrew Cask 🍺"
 brew tap caskroom/cask > /dev/null
 
 echo ""
@@ -174,11 +183,11 @@ echo "Installing Dash"
 brew cask install dash > /dev/null
 
 echo ""
-echo "Installing iTerm 2 "
+echo "Installing iTerm 2"
 brew cask install iterm2 > /dev/null
 
 echo ""
-echo "Installing Postico"
+echo "Installing Postico 🐘"
 brew cask install postico > /dev/null
 
 echo ""
@@ -226,12 +235,17 @@ echo "Installing Android SDK"
 brew install android-sdk > /dev/null
 
 echo ""
-echo "Installing Docker"
+echo "Installing Docker 🐳"
 brew cask install docker > /dev/null
 
 echo ""
-echo "Installing Kitematic (Docker)"
+echo "Installing Kitematic (Docker) 🐳"
 brew cask install kitematic > /dev/null
+
+echo ""
+echo "Installing Private Internet Access"
+brew cask install private-internet-access > /dev/null
+sudo /usr/local/Caskroom/private-internet-access/latest/Private Internet Access Installer.app/Contents/MacOS/runner.sh
 
 echo ""
 echo "Installing Blender"
@@ -274,7 +288,7 @@ echo "Installing The Unarchiver"
 brew cask install the-unarchiver > /dev/null
 
 echo ""
-echo "Installing Flux"
+echo "Installing Flux ☀️"
 brew cask install flux > /dev/null
 
 echo ""
@@ -316,6 +330,7 @@ brew cask install betterzipql > /dev/null
 brew cask install qlmarkdown > /dev/null
 brew cask install qlstephen > /dev/null
 brew cask install qlvideo > /dev/null
+brew cask install quicklookapk > /dev/null
 
 echo ""
 echo "Installing 𝑓o𝑛𝑡𝑠"
